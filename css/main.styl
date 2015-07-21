@@ -46,6 +46,7 @@ gris = #f1f2f2
 	position fixed !important
 	top 0
 	height 50px !important
+	box-shadow 0px 1px 3px rgba(black, .25)
 
 /* Main code */
 
@@ -83,7 +84,6 @@ h1[class*="text"]
 header
 	size(100%, 80px)
 	padding 0 10px
-	box-shadow 0px 1px 3px rgba(black, .25)
 	z-index 800
 	position relative
 	background white
@@ -172,6 +172,19 @@ footer
 				font-size em(14px)
 				line-height 20px
 				color #666
+			a
+				circle(30px)
+				background verde
+				line-height 30px
+				margin-top 10px
+				display inline-block
+				@media screen and (min-width:768px)
+					circle(25px)
+					line-height 25px
+				svg
+					size(16px)
+					fill white
+					vertical-align  middle
 			@media screen and (min-width:768px)
 				order 2
 				width 50%
@@ -193,6 +206,72 @@ footer
 			@media screen and (min-width:768px)
 				order 1
 				display block
+				
+/* Empresa */
+
+.page-title
+	background gris
+	size(100%, auto)
+	padding 1em 0
+	.title
+		font-size em(40px)
+		margin 0 0 10px 0
+		color verde_oscuro
+
+
+.empresa-article
+	padding 20px
+	.text
+		line-height 30px
+		text-align justify
+		@media screen and (min-width: 768px)
+			font-size 1rem
+	section
+		.section-inside
+			text-align center
+			padding 20px 0
+			.brief
+				h3
+					font-size em(20px)
+					margin-bottom 1rem
+					color verde_oscuro
+			@media screen and (min-width: 768px)
+				display flex
+				.image
+					width 325px
+					display flex
+					align-items center
+				.brief
+					width calc(100% - 325px)
+					padding-left 30px
+					text-align left
+
+
+.mision-wrapper
+	padding 20px 0
+	display flex
+	justify-content center
+	flex-wrap wrap
+	@media screen and (min-width: 700px)
+		flex-wrap nowrap
+	
+	section
+		border 1px solid rgba(black, .10)
+		padding 30px 20px
+		max-width 365px
+		&:nth-child(1)
+			margin-bottom 20px
+			@media screen and (min-width: 700px)
+				margin-bottom 0
+				margin-right 30px
+		.title
+			margin 0 0 30px 0
+			color verde_oscuro
+			text-align center
+			@media screen and (min-width: 768px)
+				font-size em(30px)
+
+
 
 /* Contact form */
 

@@ -1,0 +1,293 @@
+@import '../lib/index'
+@import 'animate'
+
+reset()
+box-reset()
+
+/* Colores */
+
+verde_claro = #ccdca9
+verde = #8bac44
+verde_oscuro = #33412d
+gris = #f1f2f2
+
+
+
+/* Useful classes */
+
+.center-text
+	text-align center
+
+.right-text
+	text-align right
+
+.left-text
+	text-align left 
+	
+.title
+	font-family: 'Roboto Condensed', sans-serif;
+	margin 1rem 0
+	@media screen and (min-width: 700px)
+		margin 0
+	
+.text
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight 300
+	
+.grid
+	display flex
+	flex-wrap wrap
+
+.v-center
+	align-content center
+	align-items center
+
+.fixed
+	position fixed !important
+	top 0
+	height 50px !important
+
+/* Main code */
+
+a[href*=".html"]
+	text-decoration none
+	color #333
+	font-family: 'Roboto Condensed', sans-serif;
+
+h1[class*="text"]
+	max-width 550px
+	margin 2em auto
+	padding 0 1em
+	line-height 25px	
+	
+.container
+	width 100%
+	max-width 960px
+	margin 0 auto
+	
+
+
+.top-bar
+	background verde_claro
+	size(100%, 10px)
+	padding 0 1em
+	a
+		size(37px)
+		display inline-block
+		line-height 37px
+		svg
+			size(50%)
+			vertical-align middle
+			fill verde
+
+header
+	size(100%, 80px)
+	padding 0 10px
+	box-shadow 0px 1px 3px rgba(black, .25)
+	z-index 800
+	position relative
+	background white
+	transition height 200ms ease-in-out
+	.container
+		@media screen and (min-width:768px)
+			justify-content space-between
+	.main-logo
+		height 30px
+		img
+			height 100%
+	nav
+		display none
+		@media screen and (min-width:768px)
+			display flex
+			ul
+				display flex
+				li
+					margin 0 10px
+		@media screen and (min-width:820px)
+			ul
+				li
+					margin 0 20px
+
+.banner
+	size(100%, auto)
+	img
+		width 100%
+
+.main-article
+	section
+		padding 2em 1em
+		background gris
+		.grid
+			justify-content center
+			@media screen and (min-width:768px)
+				justify-content space-around
+		&:nth-child(1)
+			border-bottom 1px solid rgba(black, .10)
+		.section-image
+			circle(225px)
+			overflow hidden
+			img
+				width 100%
+		.section-text
+			text-align center
+			max-width 400px
+			p
+				line-height 20px
+			@media screen and (min-width:700px)
+				display flex
+				flex-wrap wrap
+				justify-content flex-end
+				align-content  center
+				text-align right
+				h2
+					font-size em(30px)
+				p
+					margin-top 1rem
+			@media screen and (min-width:768px)
+				p
+					font-size em(18px)
+					
+#carbonato
+	@media screen and (min-width:700px)
+		.section-image
+			order 2
+		.section-text
+			text-align left
+			justify-content flex-start
+	
+footer
+	//background gris
+	padding 2em 1em
+	border-top 1px solid rgba(black, .10)
+	.container
+		justify-content center
+		@media screen and (min-width:768px)
+			justify-content space-between
+		.footer-content
+			text-align center
+			max-width 300px
+			img
+				height 30px
+			p
+				font-size em(14px)
+				line-height 20px
+				color #666
+			@media screen and (min-width:768px)
+				order 2
+				width 50%
+				text-align right
+				display flex
+				flex-wrap wrap
+				justify-content flex-end
+				align-content center
+				img
+					margin-bottom 10px
+				p
+					max-width 300px
+		nav
+			order 2
+			display none
+			ul
+				li
+					line-height 30px
+			@media screen and (min-width:768px)
+				order 1
+				display block
+
+/* Contact form */
+
+.overlay
+	background rgba(black, .40)
+	size(100%)
+	z-index 998
+	position fixed
+	top 0
+	left 0
+
+.form-popup
+	position fixed
+	size(100%)
+	top 0
+	left 0
+	display none
+	z-index 999
+	.form-wrapper
+		display flex
+		justify-content center
+		align-items center
+		size(100%)
+		position absolute
+	.form
+		background white
+		padding 1rem
+		overflow-y auto
+		position relative
+		z-index 999
+		size(90%)
+		max-width 450px
+		box-shadow 0px 1px 5px rgba(black, .25)
+		@media screen and (min-width: 480px)
+			height auto
+			padding 20px
+		hr
+			background rgba(black, .10)
+			border 0
+			size(100%, 1px)
+			margin 1em 0
+		span
+			font-size em(20px)
+			display block
+			@media screen and (min-width: 768px)
+				margin-bottom 20px
+		nav
+			text-align left
+			ul
+				li
+					line-height 30px
+					position relative
+					font-size em(14px)
+					padding-left 35px
+					&:after
+						content ""
+						display block
+						position absolute
+						size(30px)
+						background url('../img/css-sprites.svg') no-repeat
+						left 0
+						top 0
+					&:nth-child(2)
+						&:after
+							background-position 0 -30px
+					&:nth-child(3)
+						&:after
+							background-position 0 -60px
+					&:nth-child(4)
+						&:after
+							background-position 0 -90px
+		form
+			input
+			textarea
+			button
+				-webkit-appearance: none;
+			input
+			textarea
+				width 100%
+				border-radius 0
+				margin-bottom 10px
+				border 1px solid rgba(black, .10)
+				font-family 'Source Sans Pro'
+				font-weight 300
+				padding-left 5px
+			input
+			button
+				line-height 30px
+			textarea
+				resize none
+			button
+				background verde
+				color white
+				border 0
+				width 100px
+				
+				
+					

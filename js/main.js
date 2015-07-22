@@ -15,11 +15,11 @@ $.fn.animateInOut = function( animation1, animation2 ) {
 	if ($(this).hasClass('clicked')) {
 		$(this).addClass(animationOut + ' ' + 'animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			$(this).removeClass(animationOut + ' ' + 'animated clicked').hide();
+			$('.overlay').remove();
 		});
 	} else {
 		$(this).addClass(animationIn + ' ' + 'animated').show().one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			$(this).removeClass(animationIn + ' ' + 'animated').addClass('clicked');
-			$('.form-wrapper').append('<div class="overlay"></div>');
 		});
 	};
 
@@ -28,12 +28,11 @@ $.fn.animateInOut = function( animation1, animation2 ) {
 
 $('#contact').click(function() {
 	event.preventDefault();
+	$('body').append('<div class="overlay"></div>');
 	$('.form-popup').animateInOut('bounceInDown', 'bounceOutUp');
 });
 
-
- $(document).click(function(e) {
-  if(e.target.class!="form"){  // if click is not in 'mydiv'
-    console.log('clicked');
-  }
+$('.close').click(function() {
+	event.preventDefault();
+	$('.form-popup').animateInOut('bounceInDown', 'bounceOutUp');
 });

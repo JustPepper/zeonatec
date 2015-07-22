@@ -89,24 +89,59 @@ header
 	background white
 	transition height 200ms ease-in-out
 	.container
+		align-items center
 		@media screen and (min-width:768px)
 			justify-content space-between
 	.main-logo
 		height 30px
+		@media screen and (min-width:1024px)
+			height 40px
 		img
 			height 100%
 	nav
 		display none
+		ul
+			li
+				position relative
+				cursor pointer
+				line-height 80px
+				a
+					text-decoration none
+					color #333
+					display block
+					font-family: 'Roboto Condensed', sans-serif;
+				ul
+					position absolute
+					display none
+					flex-wrap wrap
+					width 100%
+					left 0
+					top 60px
+					background white
+					box-shadow 0px 1px 2px rgba(black, .25)
+					li
+						width 100%
+						line-height 40px
+						padding 0
+						text-align center
+						a
+							display block
+							&:hover
+								background verde_claro
+				&:hover
+					ul
+						display block
+							
 		@media screen and (min-width:768px)
 			display flex
 			ul
 				display flex
 				li
-					margin 0 10px
-		@media screen and (min-width:820px)
+					padding 0 10px
+		@media screen and (min-width:1024px)
 			ul
 				li
-					margin 0 20px
+					padding 0 20px
 
 .banner
 	size(100%, auto)
@@ -209,18 +244,41 @@ footer
 				
 /* Empresa */
 
+.btn
+	background verde_claro
+	border 0
+	color verde_oscuro
+	font-family 'Roboto Condensed'
+	line-height 38px
+	width 162px
+	border-bottom 2px solid verde
+
+.pages-banner
+	size(100%, 335px)
+	overflow hidden
+	img
+		height 100%
+	
+
+
 .page-title
 	background gris
 	size(100%, auto)
 	padding 1em 0
 	.title
 		font-size em(40px)
-		margin 0 0 10px 0
 		color verde_oscuro
+	img
+		width 200px
+		@media screen and (min-width: 768px)
+			height 70px
+			width auto
 
 
 .empresa-article
 	padding 20px
+	@media screen and (min-width: 768px)
+		padding 20px 0
 	.text
 		line-height 30px
 		text-align justify
@@ -245,7 +303,41 @@ footer
 					width calc(100% - 325px)
 					padding-left 30px
 					text-align left
+		/* Zeolita styles */
+		.datos-tecnicos
+			border 1px solid rgba(black, .10)
+			display flex
+			justify-content center
+			flex-wrap wrap
+			padding 17px
+			max-width 265px
+			.datos-image
+				width 100%
+				overflow hidden
+				margin-bottom 25px
+				img
+					circle(180px)
+		.zeolita-text
+			padding 0
+			@media screen and (min-width: 768px)
+				width calc(100% - 265px)
+				padding-left 30px
+			.title
+				color verde_oscuro
+				margin 20px 0
 
+.zeolita-section
+	display flex
+	flex-wrap wrap
+	justify-content center
+	@media screen and (min-width: 768px)
+		flex-wrap nowrap
+
+.reseña
+	padding 30px 0 0 0 
+	h2
+		color verde_oscuro
+		margin-bottom 23px
 
 .mision-wrapper
 	padding 20px 0
@@ -271,8 +363,84 @@ footer
 			@media screen and (min-width: 768px)
 				font-size em(30px)
 
+.product-section
+	display flex
+	flex-wrap wrap
+	justify-content center
+	.btn
+		margin-bottom 1rem
 
+.productos
+	width 100%
 
+.product-title		
+	width 100%
+	text-align center
+	font-size em(26px)
+	margin-bottom 20px
+
+.presentacion
+.granulometria
+.usos
+	border-top 1px solid rgba(verde_oscuro, .10)
+	padding 20px 0
+	margin 20px 0
+	
+.granulometria
+	.container
+		display flex
+		flex-wrap wrap
+		justify-content center
+
+	.gr-item
+		border 1px solid verde_claro
+		padding 20px
+		width 90%
+		max-width 265px
+		&:nth-child(2)
+			margin-bottom 20px
+			@media screen and (min-width: 583px)
+				margin 0 20px 0 0
+				
+	.gr-text
+		span
+			width 100%
+			display block
+			text-align center
+		
+	.gr-image
+		circle(180px)
+		overflow hidden
+		margin 20px auto 0
+
+.presentacion
+	.text
+		 max-width 600px
+		 margin 0 auto 10px
+		 text-align center 
+	img
+		width 100%
+		max-width 650px
+
+.usos
+	margin-bottom 0
+	@media screen and (min-width: 768px)
+		padding-bottom 0
+	.container
+		display flex
+		flex-wrap wrap
+		.usos-item
+			text-align center
+			margin-bottom 20px
+			&:nth-child(5)
+				margin-bottom 0
+			@media screen and (min-width: 768px)
+				width 50%
+				padding 20px 
+				margin 0
+			h3
+				font-size em(20px)
+		
 /* Contact form */
 
 .overlay
@@ -290,6 +458,7 @@ footer
 	left 0
 	display none
 	z-index 999
+	animation-duration: 750ms;
 	.form-wrapper
 		display flex
 		justify-content center
@@ -305,6 +474,26 @@ footer
 		size(90%)
 		max-width 450px
 		box-shadow 0px 1px 5px rgba(black, .25)
+		.close
+			size(25px)
+			line-height 25px
+			position absolute
+			top 10px
+			right 10px
+			display block
+			cursor pointer
+			text-align center
+			border 1px dashed verde_claro
+			transition all 250ms
+			&:hover
+				background verde_claro
+				svg
+					fill white
+			svg
+				size(20px)
+				margin-top -5px
+				fill verde
+				vertical-align middle
 		@media screen and (min-width: 480px)
 			height auto
 			padding 20px
@@ -368,5 +557,35 @@ footer
 				border 0
 				width 100px
 				
-				
-					
+.carousel 
+	margin 1rem 0		
+#carousel
+	width 100%
+	overflow hidden
+	padding 0 2em
+	margin 1rem 0
+	@media screen and (min-width: 768px)
+		padding 0
+	.item
+		height auto
+		display flex
+		overflow hidden
+		flex-wrap wrap
+		margin 0 10px 0 0
+		justify-content center
+		border 1px solid rgba(black, .10)
+		border-bottom 5px solid rgba(black, .25)
+		.carousel-image
+			width 100%
+			img
+				width 100%
+		.carousel-text
+			width 100%
+			height 75px
+			.title
+				margin 0
+				width 100%
+				line-height 43px
+			a
+				color rgba(black, .50)
+				text-decoration none

@@ -47,6 +47,13 @@ gris = #f1f2f2
 	top 0
 	height 50px !important
 	box-shadow 0px 1px 3px rgba(black, .25)
+	.main-logo
+		a
+			padding 5px 0
+			display block
+			height 100%
+			img
+				height 100%
 
 /* Main code */
 
@@ -338,6 +345,13 @@ footer
 	h2
 		color verde_oscuro
 		margin-bottom 23px
+	ul
+		li
+			list-style-image url('../img/list-square.svg')
+			list-style-position inside
+			margin-bottom 10px
+			&:last-child
+				margin 0
 
 .mision-wrapper
 	padding 20px 0
@@ -440,6 +454,38 @@ footer
 				margin 0
 			h3
 				font-size em(20px)
+
+.producto-uso
+	width 90%
+	margin 2em auto 
+	max-width 800px
+	border 1px solid rgba(black, .10)
+	padding 20px
+	text-align center
+	display flex
+	flex-wrap wrap
+	h2
+		color verde
+		font-size em(33px)
+		width 100%
+		@media screen and (min-width: 768px)
+			text-align left
+			margin-bottom 20px
+	figure
+		max-width 180px
+		img
+			size(180px)
+	.uso-text
+		@media screen and (min-width: 768px)
+			width calc(100% - 180px)
+			padding-left 20px
+			a
+				float right
+	a
+		text-decoration none
+		display block
+		margin 20px auto 0
+		
 		
 /* Contact form */
 
